@@ -2,6 +2,8 @@ from datetime import datetime as dt
 import json
 
 def check_capacity(max_capacity: int, guests: list) -> bool:
+    if len(guests) < 1:
+        return True
     guests_event = []
     min_day = min(dt.fromisoformat(i['check-in']) for i in guests)
     for item in guests:
